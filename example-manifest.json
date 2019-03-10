@@ -1,0 +1,56 @@
+{
+  "id": "EXAMPLE_ID",
+  "name": "My Plugin",
+  "version": "0.1.0",
+  "author": "Pablo Klaschka",
+  "description": "Adding XYZ to Adobe XD",
+  "summary": "Adding XYZ to XD",
+  "releaseNotes": "",
+  "website": "https://xdplugins.pabloklaschka.de",
+  "helpUrl": "https://xdplugins.pabloklaschka.de/support",
+  "tags": [
+    "my",
+    "tags",
+    "work",
+    "great"
+  ],
+  "icons": [
+    { "width": 48, "height": 48, "path": "assets/icons/icon@1x.png" },
+    { "width": 96, "height": 96, "path": "assets/icons/icon@2x.png" },
+    { "width": 144, "height": 144, "path": "assets/icons/icon@3x.png" },
+    { "width": 192, "height": 192, "path": "assets/icons/icon@4x.png" }
+  ],
+  "host": {
+    "app": "XD",
+    "minVersion": "15.0"
+  },
+  "uiEntryPoints": [
+    {
+      "type": "menu",
+      "label": {
+        "default": "My plugin",
+        "de": "Mein plugin"
+      },
+      "commandId": "runMyPlugin",
+      "shortcut": {
+        "mac": "Cmd+Shift+Alt+M",
+        "win": "Ctrl+Shift+Alt+M"
+      }
+    },
+    {
+      "menuItems": [
+        {
+          "type": "menu",
+          "label": "Hello world",
+          "commandId": "doStuff"
+        }
+      ],
+      "label": "Simple string label",
+      "type": "menu"
+    }
+  ],
+  "languages": [
+    "en",
+    "de"
+  ]
+}
