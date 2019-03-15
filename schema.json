@@ -12,7 +12,6 @@
     "description",
     "summary",
     "helpUrl",
-    "tags",
     "languages",
     "icons",
     "host",
@@ -109,12 +108,12 @@
       ],
       "pattern": "^(https)://[^\\s/$.?#].[^\\s]*$"
     },
-    "tags": {
-      "$id": "#/properties/tags",
+    "keywords": {
+      "$id": "#/properties/keywords",
       "type": "array",
-      "title": "The Tags Schema",
+      "title": "The Keywords Schema",
       "items": {
-        "$id": "#/properties/tags/items",
+        "$id": "#/properties/keywords/items",
         "type": "string",
         "title": "The Items Schema",
         "default": "",
