@@ -20,3 +20,20 @@ Below, you'll find some guides on how to use the schema in editors and IDEs. If 
 5. Under `Schema version`, select `JSON schema version 7`
 6. Below, click the `+` button (to add a mapping) and choose `Add file path pattern`
 7. As a pattern, enter `manifest.json` and you should be good to go. Alternatively, you can also use `Add file` and select your manifest file manually...
+
+#### VSCode
+1. Go to Settings (`Cmd+,`)
+2. Search for `json.schema`
+3. Click on `Edit in settings.json`
+4. Paste this config
+```json
+"json.schemas": [
+    {
+      "fileMatch": [
+        "/Adobe/*/develop/*/manifest.json"
+      ],
+      "url": "https://xdplugins.pabloklaschka.de/xsd/xd-manifest.json"
+    }
+  ]
+```
+**Note:** The pattern in `fileMatch` should specifically target the `manifest.json` file inside **your plugin's** folder. (This can be changed to suit your needs)
