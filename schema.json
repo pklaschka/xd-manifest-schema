@@ -165,6 +165,7 @@
             "title": "The Width Schema",
             "default": 0,
             "examples": [
+              24,
               48,
               96,
               144,
@@ -177,6 +178,7 @@
             "title": "The Height Schema",
             "default": 0,
             "examples": [
+              24,
               48,
               96,
               144,
