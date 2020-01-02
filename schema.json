@@ -1,18 +1,11 @@
 {
-  "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://xdplugins.pabloklaschka.de/xsd/xd-manifest.json",
   "type": "object",
-  "title": "A schema for manifest.json files for plugins for Adobe XD CC",
   "required": [
     "id",
     "name",
     "version",
-    "author",
-    "description",
-    "summary",
-    "helpUrl",
-    "languages",
     "icons",
     "host",
     "uiEntryPoints"
@@ -21,7 +14,6 @@
     "id": {
       "$id": "#/properties/id",
       "type": "string",
-      "title": "The Id Schema",
       "default": "",
       "examples": [
         "YOUR_PLUGIN_ID"
@@ -31,7 +23,6 @@
     "name": {
       "$id": "#/properties/name",
       "type": "string",
-      "title": "The Name Schema",
       "default": "",
       "examples": [
         "My plugin"
@@ -41,118 +32,18 @@
     "version": {
       "$id": "#/properties/version",
       "type": "string",
-      "title": "The Version Schema",
       "default": "",
       "examples": [
         "0.1.0"
       ],
       "pattern": "^[0-9]+\\.[0-99]+\\.[0-99]+$"
     },
-    "author": {
-      "$id": "#/properties/author",
-      "type": "string",
-      "title": "The Author Schema",
-      "default": "",
-      "examples": [
-        "Pablo Klaschka"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "description": {
-      "$id": "#/properties/description",
-      "type": "string",
-      "title": "The Description Schema",
-      "default": "",
-      "examples": [
-        "Adding XYZ to Adobe XD"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "summary": {
-      "$id": "#/properties/summary",
-      "type": "string",
-      "title": "The Summary Schema",
-      "default": "",
-      "examples": [
-        "Adding Markdown support to XD"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "releaseNotes": {
-      "$id": "#/properties/releaseNotes",
-      "type": "string",
-      "title": "The Releasenotes Schema",
-      "default": "",
-      "examples": [
-        "Added feature XYZ"
-      ],
-      "pattern": "^(.*)$"
-    },
-    "website": {
-      "$id": "#/properties/website",
-      "type": "string",
-      "title": "The Website Schema",
-      "default": "",
-      "examples": [
-        "https://xdplugins.pabloklaschka.de"
-      ],
-      "pattern": "^(https)://[^\\s/$.?#].[^\\s]*$"
-    },
-    "helpUrl": {
-      "$id": "#/properties/helpUrl",
-      "type": "string",
-      "title": "The Helpurl Schema",
-      "default": "",
-      "examples": [
-        "https://xdplugins.pabloklaschka.de/support#markdown"
-      ],
-      "pattern": "^(https)://[^\\s/$.?#].[^\\s]*$"
-    },
-    "keywords": {
-      "$id": "#/properties/keywords",
-      "type": "array",
-      "title": "The Keywords Schema",
-      "items": {
-        "$id": "#/properties/keywords/items",
-        "type": "string",
-        "title": "The Items Schema",
-        "default": "",
-        "examples": [
-          "markdown",
-          "markup",
-          "style generator",
-          "typography",
-          "semantic",
-          "text"
-        ],
-        "pattern": "^(.*)$"
-      }
-    },
-    "languages": {
-      "$id": "#/properties/languages",
-      "type": "array",
-      "title": "The Languages Schema",
-      "items": {
-        "$id": "#/properties/languages/items",
-        "type": "string",
-        "title": "The Items Schema",
-        "default": "",
-        "examples": [
-          "en",
-          "de",
-          "fr"
-        ],
-        "pattern": "^[a-z]{2}$"
-      }
-    },
     "icons": {
       "$id": "#/properties/icons",
       "type": "array",
-      "title": "The Icons Schema",
       "items": {
         "$id": "#/properties/icons/items",
         "type": "object",
-        "title": "The Items Schema",
         "required": [
           "width",
           "height",
@@ -162,33 +53,24 @@
           "width": {
             "$id": "#/properties/icons/items/properties/width",
             "type": "integer",
-            "title": "The Width Schema",
             "default": 0,
             "examples": [
               24,
-              48,
-              96,
-              144,
-              192
+              48
             ]
           },
           "height": {
             "$id": "#/properties/icons/items/properties/height",
             "type": "integer",
-            "title": "The Height Schema",
             "default": 0,
             "examples": [
               24,
-              48,
-              96,
-              144,
-              192
+              48
             ]
           },
           "path": {
             "$id": "#/properties/icons/items/properties/path",
             "type": "string",
-            "title": "The Path Schema",
             "default": "",
             "examples": [
               "assets/icons/icon@1x.png"
@@ -201,7 +83,6 @@
     "host": {
       "$id": "#/properties/host",
       "type": "object",
-      "title": "The Host Schema",
       "required": [
         "app",
         "minVersion"
@@ -210,7 +91,6 @@
         "app": {
           "$id": "#/properties/host/properties/app",
           "type": "string",
-          "title": "The App Schema",
           "default": "",
           "examples": [
             "XD"
@@ -220,7 +100,6 @@
         "minVersion": {
           "$id": "#/properties/host/properties/minVersion",
           "type": "string",
-          "title": "The Minversion Schema",
           "default": "",
           "examples": [
             "15.0"
@@ -230,7 +109,6 @@
         "maxVersion": {
           "$id": "#/properties/host/properties/minVersion",
           "type": "string",
-          "title": "The Minversion Schema",
           "default": "",
           "examples": [
             "15.0"
@@ -242,123 +120,188 @@
     "uiEntryPoints": {
       "$id": "#/properties/uiEntryPoints",
       "type": "array",
-      "title": "The Uientrypoints Schema",
-      "items": {
-        "$id": "#/properties/uiEntryPoints/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "required": [
-          "type",
-          "label"
-        ],
-        "oneOf": [
-          {
-            "required": [
-              "type",
-              "label",
-              "commandId"
-            ],
-            "properties": {
-              "commandId": {
-                "$id": "#/properties/uiEntryPoints/items/properties/commandId",
-                "type": "string",
-                "title": "The Commandid Schema",
-                "default": "",
-                "examples": [
-                  "markdown"
-                ],
-                "pattern": "^[a-zA-Z][a-zA-Z0-9]*$"
-              },
-              "shortcut": {
-                "$id": "#/properties/uiEntryPoints/items/properties/shortcut",
-                "type": "object",
-                "title": "The Shortcut Schema",
-                "required": [
-                  "mac",
-                  "win"
-                ],
-                "properties": {
-                  "mac": {
-                    "$id": "#/properties/uiEntryPoints/items/properties/shortcut/properties/mac",
-                    "type": "string",
-                    "title": "The Mac Schema",
-                    "default": "",
-                    "examples": [
-                      "Cmd+Shift+Alt+M"
-                    ],
-                    "pattern": "^((Cmd|Ctrl|Alt|Opt|Shift)\\+)+[a-zA-Z]$"
-                  },
-                  "win": {
-                    "$id": "#/properties/uiEntryPoints/items/properties/shortcut/properties/win",
-                    "type": "string",
-                    "title": "The Win Schema",
-                    "default": "",
-                    "examples": [
-                      "Ctrl+Shift+Alt+M"
-                    ],
-                    "pattern": "^((Ctrl|Alt|Shift)\\+)+[a-zA-Z]$"
-                  }
-                }
-              }
-            }
-          },
-          {
-            "required": [
-              "type",
-              "label",
-              "menuItems"
-            ],
-            "properties": {
-              "menuItems": {
-                "type": "array",
-                "items": [
-                  {
-                    "$ref": "#/properties/uiEntryPoints/items"
-                  }
-                ]
-              }
+      "definitions": {
+        "generalTypeField": {
+          "$id": "#/properties/uiEntryPoints/menuitems/type",
+          "type": "string",
+          "examples": [
+            "menu",
+            "panel"
+          ]
+        },
+        "shortcut": {
+          "$id": "#/properties/uiEntryPoints/menuitems/properties/shortcut",
+          "type": "object",
+          "required": [
+            "mac",
+            "win"
+          ],
+          "properties": {
+            "mac": {
+              "$id": "#/properties/uiEntryPoints/shortcut/mac",
+              "type": "string",
+              "default": "",
+              "examples": [
+                "Cmd+Shift+Alt+M"
+              ],
+              "pattern": "^((Cmd|Ctrl|Alt|Opt|Shift)\\+)+[a-zA-Z]$"
+            },
+            "win": {
+              "$id": "#/properties/uiEntryPoints/properties/shortcut/properties/win",
+              "type": "string",
+              "default": "",
+              "examples": [
+                "Ctrl+Shift+Alt+M"
+              ],
+              "pattern": "^((Ctrl|Alt|Shift)\\+)+[a-zA-Z]$"
             }
           }
-        ],
-        "properties": {
-          "type": {
-            "$id": "#/properties/uiEntryPoints/items/properties/type",
-            "type": "string",
-            "title": "The Type Schema",
-            "default": "",
-            "examples": [
-              "menu"
-            ],
-            "pattern": "^menu$"
+        },
+        "label": {
+          "$id": "#/properties/uiEntryPoints/label",
+          "type": [
+            "object",
+            "string"
+          ],
+          "required": [
+            "default"
+          ],
+          "additionalProperties": true,
+          "propertyNames": {
+            "pattern": "^default|[a-z]{2}$"
           },
-          "label": {
-            "$id": "#/properties/uiEntryPoints/items/properties/label",
-            "type": [
-              "object",
-              "string"
-            ],
-            "title": "The Label Schema",
-            "required": [
-              "default"
-            ],
-            "additionalProperties": true,
-            "propertyNames": {
-              "pattern": "^default|[a-z]{2}$"
+          "properties": {
+            "default": {
+              "$id": "#/properties/uiEntryPoints/label/default",
+              "type": "string",
+              "default": "",
+              "examples": [
+                "My command label"
+              ]
+            }
+          }
+        },
+        "submenuUIEntry": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "label",
+            "menuItems"
+          ],
+          "properties": {
+            "menuItems": {
+              "type": "array",
+              "items": [
+                {
+                  "oneOf": [
+                    {
+                      "$ref": "#/properties/uiEntryPoints/definitions/submenuUIEntry"
+                    },
+                    {
+                      "$ref": "#/properties/uiEntryPoints/definitions/modalUIEntry"
+                    }
+                  ]
+                }
+              ]
             },
-            "properties": {
-              "default": {
-                "$id": "#/properties/uiEntryPoints/items/properties/label/properties/default",
-                "type": "string",
-                "title": "The Default Schema",
-                "default": "",
-                "examples": [
-                  "My command label"
-                ],
-                "pattern": "^(.*)$"
-              }
+            "type": {
+              "allOf": [
+                {
+                  "$ref": "#/properties/uiEntryPoints/definitions/generalTypeField"
+                },
+                {
+                  "pattern": "^menu$"
+                }
+              ]
+            },
+            "label": {
+              "$ref": "#/properties/uiEntryPoints/definitions/label"
+            }
+          }
+        },
+        "modalUIEntry": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "label",
+            "commandId"
+          ],
+          "properties": {
+            "commandId": {
+              "$id": "#/properties/uiEntryPoints/menuitems/properties/commandId",
+              "type": "string",
+              "default": "",
+              "examples": [
+                "markdown"
+              ],
+              "pattern": "^[a-zA-Z][a-zA-Z0-9]*$"
+            },
+            "shortcut": {
+              "$ref": "#/properties/uiEntryPoints/definitions/shortcut"
+            },
+            "label": {
+              "$ref": "#/properties/uiEntryPoints/definitions/label"
+            },
+            "type": {
+              "allOf": [
+                {
+                  "$ref": "#/properties/uiEntryPoints/definitions/generalTypeField"
+                },
+                {
+                  "pattern": "^menu$"
+                }
+              ]
+            }
+          }
+        },
+        "panelUIEntry": {
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "label",
+            "panelId"
+          ],
+          "properties": {
+            "panelId": {
+              "$id": "#/properties/uiEntryPoints/menuitems/properties/panelId",
+              "type": "string",
+              "default": "",
+              "examples": [
+                "markdown"
+              ],
+              "pattern": "^[a-zA-Z][a-zA-Z0-9]*$"
+            },
+            "shortcut": {
+              "$ref": "#/properties/uiEntryPoints/definitions/shortcut"
+            },
+            "label": {
+              "$ref": "#/properties/uiEntryPoints/definitions/label"
+            },
+            "type": {
+              "allOf": [
+                {
+                  "$ref": "#/properties/uiEntryPoints/definitions/generalTypeField"
+                },
+                {
+                  "pattern": "^panel$"
+                }
+              ]
             }
           }
         }
+      },
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/properties/uiEntryPoints/definitions/modalUIEntry"
+          },
+          {
+            "$ref": "#/properties/uiEntryPoints/definitions/submenuUIEntry"
+          },
+          {
+            "$ref": "#/properties/uiEntryPoints/definitions/panelUIEntry"
+          }
+        ]
       }
     }
   }
